@@ -13,3 +13,15 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+model Car {
+  id           String  @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  category     String
+  seats        Int
+  price        Float
+  transmission String
+  fuel         String
+  image        String
+  available    Boolean @default(true)
+}
